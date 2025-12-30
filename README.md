@@ -1,29 +1,31 @@
-# NYSDS Override Extension Template
+# NYS Design System Override Extension Template
 
-A minimal, forkable Chrome extension template that applies CSS and JS overrides to a specified URL, allowing teams to preview NYS Design System styling on legacy applications.
+This is a template for a small forkable Chrome extension that applies CSS and JS overrides to a specific URL. We built is so teams can eaily preview NYS Design System styling on legacy applications.
 
 ## What This Is
 
-This is a GitHub Template Repository that teams can use to quickly spin up new override projects. The extension allows you to:
+This is a GitHub Template Repository that teams can use to quickly spin up new override projects. 
 
-- Apply NYSDS styling to legacy applications without modifying the source code
-- Preview proposed design changes with stakeholders
-- Toggle overrides on/off to compare before/after states
-- Make DOM modifications for accessibility improvements
+Here's what it's meant for:
+
+- Applying NYSDS styles to legacy applications without needing to modify the source code
+- Previewing proposed design changes with stakeholders
+- Toggling overrides on/off to compare before/after states
+- Making small modifications to the HTML using JS to showcase accessibility improvements
 
 ## Creating a New Override Project
 
 1. Click the **"Use this template"** button on GitHub (or go to the repo and select "Use this template" > "Create a new repository")
-2. Name your repo `nysds-override-<app-name>` (e.g., `nysds-override-dmv-portal`)
+2. Name your repo `nysds-override-<app-name>` (e.g., `nysds-override-ies-districtportal`)
 3. Clone your new repo locally:
    ```bash
    git clone https://github.com/your-org/nysds-override-<app-name>.git
    cd nysds-override-<app-name>
    ```
 4. Update `manifest.json`:
-   - Change `"name"` to your app name (e.g., `"NYSDS Override - DMV Portal"`)
+   - Change `"name"` to your app name (e.g., `"NYSDS Override - IES District Portal"`)
    - Change `"description"` to describe your project
-   - Update the URL pattern in both `host_permissions` and `content_scripts.matches` to target your application (e.g., `*://*.dmv.ny.gov/*`)
+   - Update the URL pattern in both `host_permissions` and `content_scripts.matches` to target your application (e.g., `*://*.ies.ny.gov/*`)
 
 ## Installing the Extension (For Stakeholders)
 
@@ -63,6 +65,9 @@ This is a GitHub Template Repository that teams can use to quickly spin up new o
   - Add ARIA attributes, semantic elements, or class modifications
   - Changes apply when the toggle is enabled
 
+> [!IMPORTANT]
+> **The DOM changes in `override.js` are for demonstration purposes only.** They preview proposed HTML improvements (like accessibility fixes or semantic markup) so stakeholders can see the intended result. These changes are not meant for production — engineers should use these as a guide to implement the modifications properly in the application's source code. Document each change with comments explaining the "why" so the intent is clear.
+
 ### Reloading Changes
 
 After editing files:
@@ -73,12 +78,21 @@ After editing files:
 
 ## For Developers
 
+### NYSDS Resources
+
+Before writing overrides, review these resources to understand how NYSDS applies tokens:
+
+- **[NYSDS Tokens](https://designsystem.ny.gov/foundations/tokens/)** - Color, typography, spacing, and other design tokens
+- **[NYSDS Components](https://designsystem.ny.gov/components/)** - See how tokens are applied to real components
+
+Use NYSDS components as a reference for how to style similar elements in your legacy application.
+
 ### Using NYSDS Variables
 
-The template automatically imports NYSDS fonts and tokens. Use CSS variables in your overrides:
+The template automatically imports NYSDS fonts and tokens via CDN. Use CSS variables in your overrides:
 
 ```css
-:root.nysds-override-active .my-element {
+.my-element {
   /* Typography */
   font-family: var(--nys-font-family-body);
 
@@ -92,21 +106,19 @@ The template automatically imports NYSDS fonts and tokens. Use CSS variables in 
 }
 ```
 
-### CSS Override Pattern
+### Production-Ready CSS
 
-All styles should use the `:root.nysds-override-active` selector prefix so they only apply when the extension is toggled on:
+The CSS in `override.css` uses clean selectors without any extension-specific prefixes. This means engineers can copy styles directly into their codebase:
 
 ```css
-/* Only applies when toggle is ON */
-:root.nysds-override-active .legacy-button {
-  background-color: var(--nys-color-action);
-}
-
-/* This would always apply - DON'T do this */
+/* This CSS is ready to use in production */
 .legacy-button {
-  background-color: red;
+  background-color: var(--nys-color-action);
+  font-family: var(--nys-font-family-body);
 }
 ```
+
+The extension dynamically injects/removes the stylesheet when toggled, so you don't need any special selector patterns.
 
 ### DOM Modification Pattern
 
@@ -179,8 +191,9 @@ SVG source files are also included in `icons/` for reference.
 
 ## Resources
 
-- [NYS Design System Documentation](https://designsystem.ny.gov)
-- [NYSDS Tokens Reference](https://unpkg.com/@nysds/styles/css/tokens.css)
+- [NYS Design System](https://designsystem.ny.gov)
+- [NYSDS Tokens](https://designsystem.ny.gov/foundations/tokens/) - Design token reference
+- [NYSDS Components](https://designsystem.ny.gov/components/) - Component token usage examples
 - [Chrome Extension Developer Guide](https://developer.chrome.com/docs/extensions/mv3/)
 
 ## License

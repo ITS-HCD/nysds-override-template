@@ -2,23 +2,47 @@
  * Toggle State Manager
  * ====================
  * Handles the toggle state for NYSDS overrides.
- * Adds/removes the 'nysds-override-active' class on <html> based on toggle state.
+ * Dynamically injects/removes the override.css stylesheet based on toggle state.
  */
 
 (function () {
   'use strict';
 
   const STORAGE_KEY = 'nysdsOverrideEnabled';
-  const ACTIVE_CLASS = 'nysds-override-active';
+  const LINK_ID = 'nysds-override-styles';
 
   /**
-   * Apply or remove the override active class based on state
+   * Inject the override.css stylesheet
+   */
+  function injectStyles() {
+    if (document.getElementById(LINK_ID)) return; // Already injected
+
+    const link = document.createElement('link');
+    link.id = LINK_ID;
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = chrome.runtime.getURL('override.css');
+    document.head.appendChild(link);
+  }
+
+  /**
+   * Remove the override.css stylesheet
+   */
+  function removeStyles() {
+    const link = document.getElementById(LINK_ID);
+    if (link) {
+      link.remove();
+    }
+  }
+
+  /**
+   * Apply or remove overrides based on state
    */
   function applyToggleState(enabled) {
     if (enabled) {
-      document.documentElement.classList.add(ACTIVE_CLASS);
+      injectStyles();
     } else {
-      document.documentElement.classList.remove(ACTIVE_CLASS);
+      removeStyles();
     }
 
     // Dispatch custom event so override.js can respond to toggle changes
@@ -55,8 +79,7 @@
   // Expose helper for override.js to check current state
   window.nysdsOverride = {
     isEnabled: function () {
-      return document.documentElement.classList.contains(ACTIVE_CLASS);
+      return !!document.getElementById(LINK_ID);
     },
-    ACTIVE_CLASS: ACTIVE_CLASS,
   };
 })();

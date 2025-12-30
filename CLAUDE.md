@@ -8,7 +8,7 @@ This file provides context and instructions for Claude Code when working on this
 
 ## Overview
 
-A minimal, forkable Chrome extension template that applies CSS and JS overrides to a specified URL, allowing teams to preview NYS Design System styling on legacy applications. This serves as a GitHub Template Repository that teams can use to quickly spin up new override projects.
+A small forkable Chrome extension template that applies CSS and JS overrides to a specified URL, allowing teams to preview NYS Design System styling on legacy applications. This serves as a GitHub Template Repository that teams can use to quickly spin up new override projects.
 
 **Repository**: `https://github.com/ITS-HCD/nysds-override-template`
 
