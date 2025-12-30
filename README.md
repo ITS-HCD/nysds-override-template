@@ -84,6 +84,33 @@ Before writing overrides, review these resources to understand how NYSDS applies
 
 Use NYSDS components as a reference for how to style similar elements in your legacy application.
 
+### Live CSS Reload (Dev Mode)
+
+For faster development iteration, you can enable dev mode to load CSS from a local server. This lets you see CSS changes by just refreshing the page (no extension reload needed).
+
+**Setup:**
+
+1. Open `toggle.js` and set `DEV_MODE = true`:
+   ```javascript
+   const DEV_MODE = true;
+   ```
+
+2. Start a local server in the extension directory:
+   ```bash
+   npx serve . -p 5555
+   ```
+   Or with Python:
+   ```bash
+   python -m http.server 5555
+   ```
+
+3. Reload the extension once (to pick up the dev mode change)
+
+4. Now just refresh the page to see CSS changes!
+
+> [!NOTE]
+> Remember to set `DEV_MODE = false` before distributing the extension to stakeholders. Dev mode only affects CSS — JavaScript changes still require an extension reload.
+
 ### Configuring the URL Pattern
 
 Before using the extension, you must configure it to target your specific application. In `manifest.json`, update these three locations:
@@ -182,7 +209,7 @@ The template imports NYSDS tokens via CDN in `override.css`. You can customize w
 Import a theme AFTER base tokens. Only use one theme at a time.
 
 > [!WARNING]
-> **Changes to `override.css` require reloading the extension.** After editing, go to `chrome://extensions`, find the NYSDS Override extension, and click the refresh icon (↻). Then refresh your target page to see the changes.
+> **Changes to `override.css` require reloading the extension** (unless using [Dev Mode](#live-css-reload-dev-mode)). After editing, go to `chrome://extensions`, find the NYSDS Override extension, and click the refresh icon (↻). Then refresh your target page to see the changes.
 
 ### Production-Ready CSS
 

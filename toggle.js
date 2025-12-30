@@ -5,6 +5,16 @@
  * Dynamically injects/removes the override.css stylesheet based on toggle state.
  */
 
+/*
+ * DEVELOPMENT MODE
+ * ================
+ * Set to true to load CSS from a local server for live reload.
+ * Run: npx serve . -p 5555
+ * Then just refresh the page to see CSS changes (no extension reload needed).
+ */
+const DEV_MODE = false;
+const DEV_SERVER_URL = 'http://localhost:5555';
+
 (function () {
   'use strict';
 
@@ -21,7 +31,14 @@
     link.id = LINK_ID;
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = chrome.runtime.getURL('override.css');
+
+    // In dev mode, load from local server for live reload
+    if (DEV_MODE) {
+      link.href = `${DEV_SERVER_URL}/override.css`;
+    } else {
+      link.href = chrome.runtime.getURL('override.css');
+    }
+
     document.head.appendChild(link);
   }
 
