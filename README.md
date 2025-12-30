@@ -114,9 +114,6 @@ Fonts are bundled locally in the `fonts/` directory for faster loading and offli
 - **D Sari** - Brand font for headings and identifiers
 - **Oswald** - Alternate font for content-heavy sites
 
-> [!NOTE]
-> Font files must be downloaded separately from [ITS-HCD/nysds-fonts](https://github.com/ITS-HCD/nysds-fonts) (internal access required). See `fonts/README.md` for instructions.
-
 ### Customizing NYSDS Imports
 
 The template imports NYSDS tokens via CDN in `override.css`. You can customize which assets to load by commenting/uncommenting the `@import` lines:

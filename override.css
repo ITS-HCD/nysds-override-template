@@ -64,7 +64,7 @@
    Example: Typography Overrides
 
    Review how NYSDS components handle typography:
-   https://designsystem.ny.gov/components/
+   https://designsystem.ny.gov/foundations/utilities/typography/
    ========================================================================== */
 
 body {
@@ -139,8 +139,8 @@ select:focus {
 /* ==========================================================================
    Example: Link Overrides
 
-   See NYSDS Link component for token usage:
-   https://designsystem.ny.gov/components/link/
+   See NYSDS Tokens page for token usage:
+   https://designsystem.ny.gov/foundations/tokens/
    ========================================================================== */
 
 /*
