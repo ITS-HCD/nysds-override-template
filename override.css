@@ -1,0 +1,143 @@
+/*
+ * NYSDS Override Styles
+ * =====================
+ * This stylesheet applies NYS Design System styling to the target application.
+ * Edit this file to customize the appearance of legacy elements.
+ *
+ * The styles below are wrapped in a :root.nysds-override-active selector
+ * so they only apply when the extension toggle is ON.
+ */
+
+/* ==========================================================================
+   NYSDS Design System Imports
+   ========================================================================== */
+
+/* NYSDS Fonts */
+@import url('https://unpkg.com/@nysds/fonts/css/fonts.css');
+
+/* NYSDS Tokens (CSS variables) */
+@import url('https://unpkg.com/@nysds/styles/css/tokens.css');
+
+/* ==========================================================================
+   Override Styles (only active when extension is toggled ON)
+   ========================================================================== */
+
+:root.nysds-override-active {
+  /*
+   * Add your override styles below.
+   * Use NYSDS CSS variables for consistency with the design system.
+   *
+   * Available token categories:
+   * - Colors: var(--nys-color-*)
+   * - Typography: var(--nys-font-*)
+   * - Spacing: var(--nys-space-*)
+   * - And more...
+   *
+   * See https://designsystem.ny.gov for full documentation.
+   */
+}
+
+/* ==========================================================================
+   Example: Typography Overrides
+   ========================================================================== */
+
+:root.nysds-override-active body {
+  font-family: var(--nys-font-family-body, 'Proxima Nova', system-ui, sans-serif);
+  /* line-height: var(--nys-line-height-body); */
+}
+
+:root.nysds-override-active h1,
+:root.nysds-override-active h2,
+:root.nysds-override-active h3,
+:root.nysds-override-active h4,
+:root.nysds-override-active h5,
+:root.nysds-override-active h6 {
+  font-family: var(--nys-font-family-heading, 'D Sari', system-ui, sans-serif);
+}
+
+/* ==========================================================================
+   Example: Button Overrides
+   ========================================================================== */
+
+/*
+:root.nysds-override-active .legacy-button,
+:root.nysds-override-active input[type="submit"],
+:root.nysds-override-active button {
+  background-color: var(--nys-color-action);
+  color: var(--nys-color-white);
+  font-family: var(--nys-font-family-body);
+  padding: var(--nys-space-2) var(--nys-space-4);
+  border: none;
+  border-radius: var(--nys-border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+:root.nysds-override-active .legacy-button:hover,
+:root.nysds-override-active input[type="submit"]:hover,
+:root.nysds-override-active button:hover {
+  background-color: var(--nys-color-action-dark);
+}
+*/
+
+/* ==========================================================================
+   Example: Form Element Overrides
+   ========================================================================== */
+
+/*
+:root.nysds-override-active input[type="text"],
+:root.nysds-override-active input[type="email"],
+:root.nysds-override-active input[type="password"],
+:root.nysds-override-active textarea,
+:root.nysds-override-active select {
+  font-family: var(--nys-font-family-body);
+  padding: var(--nys-space-2);
+  border: 1px solid var(--nys-color-border);
+  border-radius: var(--nys-border-radius);
+}
+
+:root.nysds-override-active input:focus,
+:root.nysds-override-active textarea:focus,
+:root.nysds-override-active select:focus {
+  outline: 2px solid var(--nys-color-focus);
+  outline-offset: 2px;
+}
+*/
+
+/* ==========================================================================
+   Example: Link Overrides
+   ========================================================================== */
+
+/*
+:root.nysds-override-active a {
+  color: var(--nys-color-link);
+  text-decoration: underline;
+}
+
+:root.nysds-override-active a:hover {
+  color: var(--nys-color-link-hover);
+}
+
+:root.nysds-override-active a:visited {
+  color: var(--nys-color-link-visited);
+}
+*/
+
+/* ==========================================================================
+   App-Specific Overrides
+   ========================================================================== */
+
+/*
+ * Add your application-specific overrides below.
+ * Target specific elements using their existing classes or IDs.
+ *
+ * Example:
+ *
+ * :root.nysds-override-active #main-header {
+ *   background-color: var(--nys-color-primary);
+ * }
+ *
+ * :root.nysds-override-active .nav-menu {
+ *   font-family: var(--nys-font-family-body);
+ * }
+ */
