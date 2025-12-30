@@ -4,15 +4,39 @@
  * Local font definitions for the NYS Design System.
  *
  * Fonts included:
- * - Proxima Nova: Primary font for body text and UI
+ * - Proxima Nova: Primary font for body text and UI (all weights)
  * - D Sari: Brand font for headings and identifiers
  * - Oswald: Alternate font for content-heavy sites
  *
- * Font files must be downloaded from the private ITS-HCD/nysds-fonts repo.
+ * Font files downloaded from the private ITS-HCD/nysds-fonts repo.
  * See: https://github.com/ITS-HCD/nysds-fonts
  */
 
-/* Proxima Nova - Body/UI font */
+/* ==========================================================================
+   Proxima Nova
+   ========================================================================== */
+
+/* Light (300) */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('proximanova-light.woff2') format('woff2'),
+       url('proximanova-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Light Italic (300) */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('proximanova-lightitalic.woff2') format('woff2'),
+       url('proximanova-lightitalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Regular (400) */
 @font-face {
   font-family: 'Proxima Nova';
   src: url('proximanova-regular.woff2') format('woff2'),
@@ -22,17 +46,73 @@
   font-display: swap;
 }
 
-/* D Sari - Brand/Heading font */
+/* Italic (400) */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('proximanova-italic.woff2') format('woff2'),
+       url('proximanova-italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Semibold (600) */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('proximanova-semibold.woff2') format('woff2'),
+       url('proximanova-semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold (700) */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('proximanova-bold.woff2') format('woff2'),
+       url('proximanova-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold Italic (700) */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('proximanova-bolditalic.woff2') format('woff2'),
+       url('proximanova-bolditalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Extrabold (800) */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('proximanova-extrabold.woff2') format('woff2'),
+       url('proximanova-extrabold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   D Sari - Brand/Heading font
+   ========================================================================== */
+
 @font-face {
   font-family: 'D Sari';
-  src: url('dsari-bold.woff2') format('woff2'),
+  src: url('dsari_bold.woff2') format('woff2'),
        url('dsari-bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-/* Oswald - Alternate font for content-heavy sites */
+/* ==========================================================================
+   Oswald - Alternate font for content-heavy sites
+   ========================================================================== */
+
 @font-face {
   font-family: 'Oswald';
   src: url('oswald-variable.woff2') format('woff2'),
