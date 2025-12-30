@@ -106,13 +106,24 @@ The template automatically imports NYSDS fonts and tokens via CDN. Use CSS varia
 }
 ```
 
+### Fonts
+
+Fonts are bundled locally in the `fonts/` directory for faster loading and offline support. The template includes the **Full** font bundle:
+
+- **Proxima Nova** - Primary font for body text and UI
+- **D Sari** - Brand font for headings and identifiers
+- **Oswald** - Alternate font for content-heavy sites
+
+> [!NOTE]
+> Font files must be downloaded separately from [ITS-HCD/nysds-fonts](https://github.com/ITS-HCD/nysds-fonts) (internal access required). See `fonts/README.md` for instructions.
+
 ### Customizing NYSDS Imports
 
-The template imports NYSDS assets via CDN in `override.css`. You can customize which assets to load by commenting/uncommenting the `@import` lines:
+The template imports NYSDS tokens via CDN in `override.css`. You can customize which assets to load by commenting/uncommenting the `@import` lines:
 
 | Asset | Description | When to Use |
 |-------|-------------|-------------|
-| **Fonts** | Proxima Nova + D Sari typefaces | Always recommended |
+| **Fonts** (local) | Proxima Nova, D Sari, Oswald | Always recommended |
 | **Base tokens** (`nysds.min.css`) | CSS variables only | Default - when applying tokens to existing styles |
 | **Full styles** (`nysds-full.min.css`) | Tokens + reset + utilities | When you want aggressive normalization (may conflict with app styles) |
 

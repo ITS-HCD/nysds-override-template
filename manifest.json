@@ -33,7 +33,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["override.css"],
+      "resources": ["override.css", "fonts/*"],
       "matches": ["*://*.example.gov/*"]
     }
   ]

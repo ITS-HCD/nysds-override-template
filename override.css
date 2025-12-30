@@ -23,10 +23,12 @@
    ========================================================================== */
 
 /*
- * FONTS (recommended)
- * Loads Proxima Nova and D Sari typefaces
+ * FONTS (bundled locally)
+ * Loads Proxima Nova, D Sari, and Oswald typefaces.
+ * Font files must be added to the fonts/ directory.
+ * See fonts/README.md for download instructions.
  */
-@import url('https://unpkg.com/@nysds/fonts/css/fonts.css');
+@import url('fonts/nysds-fonts.css');
 
 /*
  * BASE TOKENS (recommended)
