@@ -15,13 +15,48 @@
 
 /* ==========================================================================
    NYSDS Design System Imports
+
+   Choose which NYSDS assets to import based on your needs.
+   Uncomment/comment the @import lines below as needed.
+
+   Package: https://www.npmjs.com/package/@nysds/styles
    ========================================================================== */
 
-/* NYSDS Fonts */
+/*
+ * FONTS (recommended)
+ * Loads Proxima Nova and D Sari typefaces
+ */
 @import url('https://unpkg.com/@nysds/fonts/css/fonts.css');
 
-/* NYSDS Tokens (CSS variables) */
-@import url('https://unpkg.com/@nysds/styles/css/tokens.css');
+/*
+ * BASE TOKENS (recommended)
+ * CSS variables only - colors, typography, spacing, etc.
+ * Use this when you want to apply NYSDS tokens to existing styles.
+ */
+@import url('https://unpkg.com/@nysds/styles@latest/dist/nysds.min.css');
+
+/*
+ * FULL STYLES (alternative)
+ * Includes base tokens PLUS CSS reset and utility classes.
+ * Use this when you want more aggressive normalization.
+ * ⚠️  May conflict with existing application styles.
+ *
+ * @import url('https://unpkg.com/@nysds/styles@latest/dist/nysds-full.min.css');
+ */
+
+/*
+ * AGENCY THEMES (optional)
+ * Override default theme colors for specific agency branding.
+ * Import AFTER base tokens. Only use ONE theme at a time.
+ *
+ * @import url('https://unpkg.com/@nysds/styles@latest/dist/nysds-theme-admin.min.css');
+ * @import url('https://unpkg.com/@nysds/styles@latest/dist/nysds-theme-business.min.css');
+ * @import url('https://unpkg.com/@nysds/styles@latest/dist/nysds-theme-environment.min.css');
+ * @import url('https://unpkg.com/@nysds/styles@latest/dist/nysds-theme-health.min.css');
+ * @import url('https://unpkg.com/@nysds/styles@latest/dist/nysds-theme-local.min.css');
+ * @import url('https://unpkg.com/@nysds/styles@latest/dist/nysds-theme-safety.min.css');
+ * @import url('https://unpkg.com/@nysds/styles@latest/dist/nysds-theme-transportation.min.css');
+ */
 
 /* ==========================================================================
    Example: Typography Overrides

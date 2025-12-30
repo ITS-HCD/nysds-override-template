@@ -106,6 +106,27 @@ The template automatically imports NYSDS fonts and tokens via CDN. Use CSS varia
 }
 ```
 
+### Customizing NYSDS Imports
+
+The template imports NYSDS assets via CDN in `override.css`. You can customize which assets to load by commenting/uncommenting the `@import` lines:
+
+| Asset | Description | When to Use |
+|-------|-------------|-------------|
+| **Fonts** | Proxima Nova + D Sari typefaces | Always recommended |
+| **Base tokens** (`nysds.min.css`) | CSS variables only | Default - when applying tokens to existing styles |
+| **Full styles** (`nysds-full.min.css`) | Tokens + reset + utilities | When you want aggressive normalization (may conflict with app styles) |
+
+**Agency Themes** (optional) - Override default colors for specific agency branding:
+- `nysds-theme-admin.min.css`
+- `nysds-theme-business.min.css`
+- `nysds-theme-environment.min.css`
+- `nysds-theme-health.min.css`
+- `nysds-theme-local.min.css`
+- `nysds-theme-safety.min.css`
+- `nysds-theme-transportation.min.css`
+
+Import a theme AFTER base tokens. Only use one theme at a time.
+
 ### Production-Ready CSS
 
 The CSS in `override.css` uses clean selectors without any extension-specific prefixes. This means engineers can copy styles directly into their codebase:
