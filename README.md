@@ -24,6 +24,22 @@ Here's what it's meant for:
    ```
 4. Update `manifest.json` to target your application (see [Configuring the URL Pattern](#configuring-the-url-pattern) below)
 
+## Preparing for Stakeholders
+
+When you're ready to share the extension with stakeholders for review, swap in the simplified README:
+
+```bash
+mv README.md README-DEV.md
+mv README-STAKEHOLDER.md README.md
+```
+
+Then update the placeholders in the new README:
+- Replace `[App Name]` with your application's name
+- Replace `[App URL]` with the application URL
+
+> [!TIP]
+> The stakeholder README only contains installation and usage instructions — no technical details about development, tokens, or configuration. This makes it much easier for non-technical reviewers to get started.
+
 ## Installing the Extension (For Stakeholders)
 
 1. **Download the extension**
@@ -264,7 +280,8 @@ nysds-override-template/
 │   ├── icon-48.png
 │   ├── icon-128.png
 │   └── icon.svg
-└── README.md           # This file
+├── README.md           # This file (developer documentation)
+└── README-STAKEHOLDER.md  # Simplified README for stakeholders
 ```
 
 ### Customizing Icons
