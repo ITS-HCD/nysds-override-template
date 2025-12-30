@@ -1,4 +1,4 @@
-# NYSDS Override Extension
+# NYSDS Test Drive
 
 This Chrome extension previews proposed NYS Design System styling changes on [App Name]. Use it to compare the current look with the new design.
 
@@ -49,3 +49,43 @@ This Chrome extension previews proposed NYS Design System styling changes on [Ap
 ## Questions?
 
 Contact the design team if you have questions about the proposed changes or need help with the extension.
+
+---
+
+## For Developers: Implementing the Changes
+
+Once stakeholders approve the design, here's how to bring these changes into the legacy application.
+
+### CSS Styles
+
+The styles in `override.css` are production-ready — copy them directly into your application's stylesheet. They use [NYSDS design tokens](https://designsystem.ny.gov/foundations/tokens/) (CSS custom properties) for colors, typography, and spacing.
+
+**To use the tokens**, add this to your application's `<head>`:
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/@nysds/styles@latest/dist/nysds.min.css">
+```
+
+Or install via npm:
+
+```bash
+npm install @nysds/styles
+```
+
+### Fonts
+
+The extension uses NYSDS fonts (Proxima Nova, D Sari, Oswald). To use them in your application:
+
+1. **Request access** to the [nysds-fonts repo](https://github.com/ITS-HCD/nysds-fonts) (private, requires NYS authorization)
+2. Copy the font files to your project
+3. Include `nysds-fonts.css` or add the `@font-face` declarations to your stylesheet
+
+### DOM/HTML Changes
+
+Review the comments in `override.js` — they document proposed HTML improvements (accessibility fixes, semantic markup, ARIA attributes). These are meant as a guide for what to implement in your source code, not to be used directly.
+
+### Resources
+
+- [NYSDS Tokens Reference](https://designsystem.ny.gov/foundations/tokens/)
+- [NYSDS Components](https://designsystem.ny.gov/components/)
+- [@nysds/styles on npm](https://www.npmjs.com/package/@nysds/styles)
