@@ -22,10 +22,7 @@ Here's what it's meant for:
    git clone https://github.com/your-org/nysds-override-<app-name>.git
    cd nysds-override-<app-name>
    ```
-4. Update `manifest.json`:
-   - Change `"name"` to your app name (e.g., `"NYSDS Override - IES District Portal"`)
-   - Change `"description"` to describe your project
-   - Update the URL pattern in both `host_permissions` and `content_scripts.matches` to target your application (e.g., `*://*.ies.ny.gov/*`)
+4. Update `manifest.json` to target your application (see [Configuring the URL Pattern](#configuring-the-url-pattern) below)
 
 ## Installing the Extension (For Stakeholders)
 
@@ -87,22 +84,71 @@ Before writing overrides, review these resources to understand how NYSDS applies
 
 Use NYSDS components as a reference for how to style similar elements in your legacy application.
 
+### Configuring the URL Pattern
+
+Before using the extension, you must configure it to target your specific application. In `manifest.json`, update these three locations:
+
+1. **Extension name and description:**
+```json
+"name": "NYSDS Override - [Your App Name]",
+"description": "Preview NYS Design System styling on [Your App Name]",
+```
+
+2. **Host permissions** (allows the extension to run on your target site):
+```json
+"host_permissions": [
+  "*://*.your-app.ny.gov/*"
+],
+```
+
+3. **Content scripts matches** (specifies where scripts run):
+```json
+"content_scripts": [
+  {
+    "matches": ["*://*.your-app.ny.gov/*"],
+    ...
+  }
+],
+```
+
+4. **Web accessible resources** (allows CSS/fonts to load):
+```json
+"web_accessible_resources": [
+  {
+    "resources": ["override.css", "fonts/*"],
+    "matches": ["*://*.your-app.ny.gov/*"]
+  }
+]
+```
+
+**URL Pattern Examples:**
+| Target | Pattern |
+|--------|---------|
+| Single domain | `*://*.dmv.ny.gov/*` |
+| Specific subdomain | `*://portal.health.ny.gov/*` |
+| Multiple subdomains | `*://*.*.education.ny.gov/*` |
+| Local development | `*://localhost:3000/*` |
+
 ### Using NYSDS Variables
 
-The template automatically imports NYSDS fonts and tokens via CDN. Use CSS variables in your overrides:
+The template automatically imports NYSDS fonts and tokens. Use CSS variables in your overrides:
 
 ```css
 .my-element {
   /* Typography */
-  font-family: var(--nys-font-family-body);
+  font-family: var(--nys-font-family-sans);
+  font-size: var(--nys-font-size-md);
+  color: var(--nys-color-text);
 
   /* Colors */
-  background-color: var(--nys-color-action);
-  color: var(--nys-color-white);
+  background-color: var(--nys-color-theme);
 
   /* Spacing */
-  padding: var(--nys-space-4);
-  margin-bottom: var(--nys-space-2);
+  padding: var(--nys-space-200);
+  margin-bottom: var(--nys-space-100);
+
+  /* Borders */
+  border-radius: var(--nys-radius-md);
 }
 ```
 
@@ -142,8 +188,11 @@ The CSS in `override.css` uses clean selectors without any extension-specific pr
 ```css
 /* This CSS is ready to use in production */
 .legacy-button {
-  background-color: var(--nys-color-action);
-  font-family: var(--nys-font-family-body);
+  background-color: var(--nys-color-theme);
+  color: var(--nys-color-ink-reverse);
+  font-family: var(--nys-font-family-sans);
+  padding: var(--nys-space-100) var(--nys-space-200);
+  border-radius: var(--nys-radius-md);
 }
 ```
 
@@ -177,22 +226,24 @@ nysds-override-template/
 ├── toggle.js           # Toggle state management
 ├── popup.html          # Toggle UI popup
 ├── popup.js            # Popup logic
+├── fonts/              # Bundled NYSDS fonts
+│   ├── nysds-fonts.css
+│   └── *.woff, *.woff2
 ├── icons/              # Extension icons
 │   ├── icon-16.png
 │   ├── icon-48.png
-│   └── icon-128.png
+│   ├── icon-128.png
+│   └── icon.svg
 └── README.md           # This file
 ```
 
 ### Customizing Icons
 
-The template includes placeholder icons. To customize:
+The template uses the official NYS Design System favicon. To customize:
 
-1. Create 16x16, 48x48, and 128x128 PNG icons
-2. Replace the files in the `icons/` folder
-3. Keep the same filenames or update `manifest.json`
-
-SVG source files are also included in `icons/` for reference.
+1. Replace `icons/icon.svg` with your SVG icon
+2. Generate PNG versions at 16x16, 48x48, and 128x128
+3. Or use ImageMagick: `magick icon.svg -resize 48x48 icon-48.png`
 
 ## Troubleshooting
 
