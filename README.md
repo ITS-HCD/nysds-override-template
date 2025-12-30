@@ -181,6 +181,9 @@ The template imports NYSDS tokens via CDN in `override.css`. You can customize w
 
 Import a theme AFTER base tokens. Only use one theme at a time.
 
+> [!WARNING]
+> **Changes to `override.css` require reloading the extension.** After editing, go to `chrome://extensions`, find the NYSDS Override extension, and click the refresh icon (↻). Then refresh your target page to see the changes.
+
 ### Production-Ready CSS
 
 The CSS in `override.css` uses clean selectors without any extension-specific prefixes. This means engineers can copy styles directly into their codebase:
