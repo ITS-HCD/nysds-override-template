@@ -36,6 +36,7 @@ nysds-override-template/
 │   ├── icon-16.png
 │   ├── icon-48.png
 │   └── icon-128.png
+├── CHANGELOG.md        # Version history
 └── README.md           # Installation + usage instructions
 ```
 
@@ -104,6 +105,17 @@ Yes, this is possible without extra tooling:
 
 **Recommendation**: For simplicity, document the "reload extension" workflow. Add a keyboard shortcut to reload if helpful.
 
+### Versioning & Releases
+
+- Use [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PATCH)
+  - MAJOR: Breaking changes to template structure
+  - MINOR: New features or example patterns
+  - PATCH: Bug fixes and documentation updates
+- Keep `manifest.json` version in sync with git tags
+- Create GitHub Releases for each version with release notes
+- Update `CHANGELOG.md` following [Keep a Changelog](https://keepachangelog.com/) format
+- Tag releases as `v1.0.0` (with `v` prefix)
+
 ### README.md Content
 
 1. **What this is**: Brief explanation of the override extension template purpose
@@ -160,4 +172,3 @@ The template should contain:
 ## Open Questions
 
 1. Should we include example `override.css` with common legacy patterns (reset styles, form elements, buttons)?
-2. Should we include a CHANGELOG template for teams to document their override iterations?
