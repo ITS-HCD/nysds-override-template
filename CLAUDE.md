@@ -4,13 +4,13 @@ This file provides context and instructions for Claude Code when working on this
 
 ---
 
-# PRD: NYSDS Override Extension Template
+# PRD: NYSDS Test Drive Extension Template
 
 ## Overview
 
 A small forkable Chrome extension template that applies CSS and JS overrides to a specified URL, allowing teams to preview NYS Design System styling on legacy applications. This serves as a GitHub Template Repository that teams can use to quickly spin up new override projects.
 
-**Repository**: `https://github.com/ITS-HCD/nysds-override-template`
+**Repository**: `https://github.com/ITS-HCD/nysds-testdrive-template`
 
 ## Goals
 
@@ -18,14 +18,14 @@ A small forkable Chrome extension template that applies CSS and JS overrides to 
 - **Previewable**: Stakeholders can side-load the extension to see proposed changes
 - **Toggleable**: On/off switch so users can compare before/after
 - **Live reload**: CSS and JS changes appear immediately on save (no rebuild step)
-- **Forkable**: GitHub Template Repository — one click to create a new override project
+- **Forkable**: GitHub Template Repository — one click to create a new NYSDS Test Drive project
 
 ## Technical Requirements
 
 ### File Structure
 
 ```
-nysds-override-template/
+nysds-testdrive-template/
 ├── manifest.json
 ├── override.css        # Main stylesheet for overrides
 ├── override.js         # HTML modifications (DOM manipulation)
@@ -141,7 +141,7 @@ Yes, this is possible without extra tooling:
 
 ## Repository Setup
 
-Configure `ITS-HCD/nysds-override-template` as a GitHub Template Repository:
+Configure `ITS-HCD/nysds-testdrive-template` as a GitHub Template Repository:
 
 1. Go to repo Settings
 2. Check "Template repository" under the repository name
@@ -163,7 +163,7 @@ The template should contain:
 
 ## Success Criteria
 
-- A developer can create a new override project from the template and have a working extension in under 5 minutes
+- A developer can create a new NYSDS Test Drive project from the template and have a working extension in under 5 minutes
 - A stakeholder can install the extension following README instructions without developer assistance
 - CSS changes are visible after a simple page refresh
 - Toggle clearly shows before/after state
