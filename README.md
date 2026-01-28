@@ -1,4 +1,4 @@
-# NYS Design System Override Extension Template
+# NYS Design System Test Drive [Template]
 
 This is a template for a small forkable Chrome extension that applies CSS and JS overrides to a specific URL. We built is so teams can eaily preview NYS Design System styling on legacy applications.
 
@@ -13,14 +13,14 @@ Here's what it's meant for:
 - Toggling overrides on/off to compare before/after states
 - Making small modifications to the HTML using JS to showcase accessibility improvements
 
-## Creating a New Override Project
+## Creating a New Test Drive Project
 
 1. Click the **"Use this template"** button on GitHub (or go to the repo and select "Use this template" > "Create a new repository")
-2. Name your repo `nysds-override-<app-name>` (e.g., `nysds-override-ies-districtportal`)
+2. Name your repo `nysds-testdrive-<app-name>` (e.g., `nysds-testdrive-ies-districtportal`)
 3. Clone your new repo locally:
    ```bash
-   git clone https://github.com/your-org/nysds-override-<app-name>.git
-   cd nysds-override-<app-name>
+   git clone https://github.com/your-org/nysds-testdrive-<app-name>.git
+   cd nysds-testdrive-<app-name>
    ```
 4. Update `manifest.json` to target your application (see [Configuring the URL Pattern](#configuring-the-url-pattern) below)
 
@@ -59,7 +59,7 @@ Then update the placeholders in the new README:
 
 5. **Pin the Extension** (Optional)
    - Click the puzzle piece icon in Chrome's toolbar
-   - Click the pin icon next to "NYSDS Override"
+   - Click the pin icon next to "NYSDS Test Drive"
 
 ## Usage
 
@@ -85,7 +85,7 @@ Then update the placeholders in the new README:
 
 After editing files:
 1. Go to `chrome://extensions`
-2. Find the NYSDS Override extension
+2. Find the NYSDS Test Drive extension
 3. Click the refresh icon (↻) on the extension card
 4. Refresh your target page
 
@@ -133,7 +133,7 @@ Before using the extension, you must configure it to target your specific applic
 
 1. **Extension name and description:**
 ```json
-"name": "NYSDS Override - [Your App Name]",
+"name": "NYSDS Test Drive - [Your App Name]",
 "description": "Preview NYS Design System styling on [Your App Name]",
 ```
 
@@ -265,7 +265,7 @@ if (iconButton && !iconButton.hasAttribute('aria-label')) {
 ### File Structure
 
 ```
-nysds-override-template/
+nysds-testdrive-template/
 ├── manifest.json       # Extension configuration (update URL pattern here)
 ├── override.css        # Main stylesheet for overrides
 ├── override.js         # DOM manipulation script
