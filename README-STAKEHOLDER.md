@@ -21,7 +21,7 @@ This Chrome extension previews proposed NYS Design System styling changes on [Ap
 
 5. **Pin the Extension** (recommended)
    - Click the puzzle piece icon (🧩) in Chrome's toolbar
-   - Click the pin icon next to "NYSDS Override"
+   - Click the pin icon next to "NYSDS Test Drive"
 
 ## Using the Extension
 
@@ -35,7 +35,7 @@ This Chrome extension previews proposed NYS Design System styling changes on [Ap
 
 ### Extension icon not visible
 - Click the puzzle piece icon (🧩) in Chrome's toolbar
-- Find "NYSDS Override" and click the pin icon
+- Find "NYSDS Test Drive" and click the pin icon
 
 ### Styles not appearing
 - Make sure you're on the correct website
