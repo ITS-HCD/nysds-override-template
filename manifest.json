@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "NYSDS Override - [App Name]",
+  "name": "NYSDS Test Drive - [App Name]",
   "description": "Preview NYS Design System styling on [App Name]",
   "version": "1.0.0",
   "permissions": [
